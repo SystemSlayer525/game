@@ -1,0 +1,105 @@
+ <!DOCTYPE html> 
+<html>
+    <title>Game Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <link rel="stylesheet" href="animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .cards {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <head> 
+        <div class="container; co-sm-12; col-md-12; col-lg-12;">
+                <h1 class="animated bounceInLeft" style="text-align:center; color: Black"><strong>The Tyrant King</strong>
+                    <div class="play">
+                <button class="animated bounceInLeft" onClick="play()">PLAY</button>       
+            </div>
+            </h1>
+        </div>
+    </head>
+    <body>
+        <br>
+        <div class="container; co-sm-12; col-md-12; col-lg-12;">
+            <section id="game-canvas">
+                <meta charset="utf-8"/>
+                    <script type="text/javascript" class="row; animated bounceIn">
+                       $(document).ready(function(){
+            var allies = 10;
+            var baddys = 10;
+            var cards = [];   //variable for both cards 
+                            var cards = ['allies'];   
+                        //variable for cards allies 
+                        (
+cards [0] = 'css/assets/allies/card-thehunter.png';
+cards [1] = 'css/assets/allies/card-theadventurer.png';
+cards [2] = 'css/assets/allies/card-thechicken.png';
+cards [3] = 'css/assets/allies/card-thedrunk.png';
+cards [4] = 'css/assets/allies/card-thegoodmage.png';
+cards [5] = 'css/assets/allies/card-thepeasant.png';
+cards [6] = 'css/assets/allies/card-therebel.png';
+cards [7] = 'css/assets/allies/card-thetownguard.png';
+                        )
+            var cards = ['baddys'];   
+                        //variable for cards allies 
+                            (
+cards [0] = 'css/assets/baddys/card-thegoldenknight.png';
+cards [1] = 'css/assets/baddys/card-thejester.png';
+cards [2] = 'css/assets/baddys/card-therecruit.png';
+cards [3] = 'css/assets/baddys/card-thespy.png';
+cards [4] = 'css/assets/baddys/card-thetalon.png';
+cards [5] = 'css/assets/baddys/card-thetower.png';
+cards [6] = 'css/assets/baddys/card-thetyrant.png';
+cards [7] = 'css/assets/baddys/card-thebadmagae.png';
+                            )
+                $("#startGame").on("click",function(){
+                $("#allies").attr("src", '');
+                $("#baddys").attr("src", '');
+                $("#showWinner").html("");
+                getPlayerCards();
+            }); 
+        });
+function getRandom() {
+            var randomNumber = Math.floor(Math.random() * 7) //Get random between 0 and 7
+            return randomNumber;
+        }
+
+        function getPlayerCards() {
+            this.allies = this.getRandom(allies);
+            this.baddys = this.getRandom(baddys);                
+        }
+
+        function displayCards() {
+            $("#allies").attr("src", '"' + cards[this.allies] + '"'); //PUT URL PLAYER 1 TO IMG
+            $("#baddys").attr("src", '"' + cards[this.baddys] + '"'); //PUT URL PLAYER 2 TO IMG
+
+            if(this.allies = 0 =(0<)) {
+                $("#showWinner").html("Baddys are the winner!");
+            } else if (this.baddys = 0 =(0<)) {
+                $("#showWinner").html("Allies are the winner!");
+            } else if (this.allies = 0 =(0<), this.baddys = 0) {
+                $("#showWinner").html("Its a TIE!");
+            }
+        }
+
+                    </script>
+            </section>
+        </div>
+        <br>
+    <img id="allies" class="allieset">
+
+    <img id="baddys" class="baddysset">
+
+    <div id="showWinner"></div>
+        <h3 class="animated bounceInLeft" style="text-align:center; color: Black"><strong>Start Again?</strong>
+            <div>
+    <button class="animated bounceInLeft" id="startGame">Get new cards</button>
+                </div>
+        </h3>
+    </body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</html>
